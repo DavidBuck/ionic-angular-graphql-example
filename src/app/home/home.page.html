@@ -1,0 +1,35 @@
+<ion-content>
+  <div class="ion-padding">
+    <h1>Ionic Angular GraphQL Apollo Example</h1>
+  </div>
+  <div class="ion-padding">
+    <ion-button (click)="addPostGraphql()">Add Post</ion-button>
+    <ion-button (click)="updatePostGraphql()">Update Post</ion-button>
+    <ion-button (click)="deletePostGraphql()">Delete Post</ion-button>
+  </div>
+
+  <ion-grid class="ion-padding">
+    <ion-row>
+      <ion-col sizeMd="2" class="bgcolor ion-text-center">
+        <ion-text color="primary">Id</ion-text>
+      </ion-col>
+      <ion-col sizeMd="2" class="bgcolor ion-text-center">
+        <ion-text color="primary">Title</ion-text>
+      </ion-col>
+      <ion-col sizeMd="2" class="bgcolor ion-text-center">
+        <ion-text color="primary">Author</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let post of posts | async">
+      <ion-col sizeMd="2" class="ion-text-center">
+        {{ post.id }}
+      </ion-col>
+      <ion-col sizeMd="2" class="ion-text-center">
+        {{ post.title }}
+      </ion-col>
+      <ion-col sizeMd="2" class="ion-text-center">
+        {{ post.author }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
